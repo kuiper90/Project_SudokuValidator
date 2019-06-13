@@ -1,0 +1,8 @@
+D:\Git\Project_SudokuValidator\Project_SudokuValidator\Project_SudokuValidator\bin\Debug\Project_SudokuValidator.dll
+D:\Git\Project_SudokuValidator\Project_SudokuValidator\Project_SudokuValidator\bin\Debug\Project_SudokuValidator.pdb
+D:\Git\Project_SudokuValidator\Project_SudokuValidator\Project_SudokuValidator\bin\Debug\Microsoft.VisualStudio.CodeCoverage.Shim.dll
+D:\Git\Project_SudokuValidator\Project_SudokuValidator\Project_SudokuValidator\obj\Debug\Project_SudokuValidator.csprojAssemblyReference.cache
+D:\Git\Project_SudokuValidator\Project_SudokuValidator\Project_SudokuValidator\obj\Debug\Project_SudokuValidator.csproj.CoreCompileInputs.cache
+D:\Git\Project_SudokuValidator\Project_SudokuValidator\Project_SudokuValidator\obj\Debug\Project_SudokuValidator.csproj.CopyComplete
+D:\Git\Project_SudokuValidator\Project_SudokuValidator\Project_SudokuValidator\obj\Debug\Project_SudokuValidator.dll
+D:\Git\Project_SudokuValidator\Project_SudokuValidator\Project_SudokuValidator\obj\Debug\Project_SudokuValidator.pdb
