@@ -1,38 +1,55 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Project_SudokuValidator
 {
-    public static class SudokuValidator
+    public class SudokuValidator
     {
-        private static bool Distinct(int[] row)
-        {
-            int[] mask = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        private readonly int[][] board;
 
-            for (int i = 0; i < 9; i++)
-            {
-                if (row[i] < 1 || row[i] > 9)
-                    return false;
-                mask[row[i] - 1] = 1;
-            }
-            return mask.Sum(x => x) == 9;
+        public SudokuValidator(int[][] sudokuBoard)
+        {
+            this.board = sudokuBoard;
         }
 
-        private static bool ValidateRows(int[][] sudokuBoard)
-            => sudokuBoard.All(row => Distinct(row));
+        public bool IsValid()
+            => Rows()
+                .Union(Columns())
+                .Union(Boxes())
+                .All(IsValid);
 
-        private static bool ValidateColumns(int[][] sudokuBoard)
-            => sudokuBoard
-                .Select((row, i) => sudokuBoard
-                .Select(r => r[i]))
-                .All(t => Distinct(t.ToArray()));
+        private static bool IsValid(IEnumerable<int> elements)
+        {
+            return elements.Count() == 9
+                && elements
+                .Where(x => 0 < x && x < 10)
+                .Distinct()
+                .Count() == 9;
+        }
 
-        private static bool ValidateBox(int[][] sudokuBoard)
-            => sudokuBoard.Select((row, i) =>
-                 sudokuBoard.Skip((i / 3) * 3).Take(3)
-                 .Select(r => r.Skip((i % 3) * 3).Take(3))
-                 .SelectMany(x => x).ToArray()).All(square => Distinct(square));
+        private IEnumerable<IEnumerable<int>> Columns()
+            => Enumerable.Range(0, 9)
+                .Select(i => board.Select(r => r[i]));
 
-        public static bool ValidateSudoku(int[][] sudokuBoard)
-            => ValidateRows(sudokuBoard) && ValidateColumns(sudokuBoard) && ValidateBox(sudokuBoard);
+        private IEnumerable<IEnumerable<int>> Rows() => board;
+
+        private IEnumerable<IEnumerable<int>> Boxes()
+        {
+            //version 1
+            //var x = new[] { 0, 3, 6 };
+            //return x.SelectMany(i => x.Select(j => Box(i, j)));
+
+            //version 2
+            return Enumerable.Range(0, 9)
+                .Select(i => Box((i / 3) * 3, (i % 3) * 3));
+        }
+
+        private IEnumerable<int> Box(int x, int y)
+        {
+            return Enumerable.Range(x, 3)
+                .SelectMany(i =>
+                    Enumerable.Range(y, 3)
+                    .Select(j => board[i][j]));
+        }
     }
 }
