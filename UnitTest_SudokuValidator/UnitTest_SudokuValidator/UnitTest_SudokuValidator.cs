@@ -16,7 +16,7 @@ namespace UnitTest_SudokuValidator
                                                 new int[] { 9,5,1,7,4,3,6,2,8},
                                                 new int[] { 5,1,9,3,2,6,8,7,4},
                                                 new int[] { 2,4,8,9,5,7,1,3,6},
-                                                new int[] { 7,6,3,4,1,8,2,5,9},
+                                                new int[] { 7,6,3,4,1,8,2,5,9}
                                             });
             Assert.True(sudoku.IsValid());
         }
@@ -32,7 +32,7 @@ namespace UnitTest_SudokuValidator
                                                 new int[] { 9,5,1,7,4,3,6,2,8},
                                                 new int[] { 5,1,9,3,2,6,8,7,4},
                                                 new int[] { 2,4,8,9,5,7,1,3,6},
-                                                new int[] { 1,6,3,4,1,8,2,5,9},
+                                                new int[] { 1,6,3,4,1,8,2,5,9}
                                              });
             Assert.False(sudoku.IsValid());
         }
@@ -48,7 +48,7 @@ namespace UnitTest_SudokuValidator
                                                 new int[] { 9,5,1,7,4,3,6,2,8},
                                                 new int[] { 5,1,9,3,2,6,8,7,4},
                                                 new int[] { 2,4,8,9,5,7,1,3,6},
-                                                new int[] { 1,6,3,4,1,8,2,5,9},
+                                                new int[] { 1,6,3,4,1,8,2,5,9}
                                             });
             Assert.False(sudoku.IsValid());
         }
@@ -64,7 +64,7 @@ namespace UnitTest_SudokuValidator
                                                 new int[] { 9,5,1,7,4,3,6,2,8},
                                                 new int[] { 5,1,9,3,2,6,8,7,4},
                                                 new int[] { 2,4,8,9,5,7,1,6},
-                                                new int[] { 1,6,3,4,1,8,2,5,9},
+                                                new int[] { 1,6,3,4,1,8,2,5,9}
                                             });
             Assert.False(sudoku.IsValid());
         }
@@ -80,7 +80,7 @@ namespace UnitTest_SudokuValidator
                                                 new int[] { 9,5,1,7,4,3,6,2,8},
                                                 new int[] { 5,1,9,3,2,6,8,7,4},
                                                 new int[] { 2,4,8,9,5,7,1,3,6,1},
-                                                new int[] { 7,6,3,4,1,8,2,5,9},
+                                                new int[] { 7,6,3,4,1,8,2,5,9}
                                             });
             Assert.False(sudoku.IsValid());
         }
@@ -96,7 +96,7 @@ namespace UnitTest_SudokuValidator
                                                 new int[] { 9,5,1,7,4,3,6,2,8},
                                                 new int[] { 5,1,9,3,2,6,8,7,4},
                                                 new int[] { 2,4,8,9,5,7,1,3,100},
-                                                new int[] { 7,6,3,4,1,8,2,5,9},
+                                                new int[] { 7,6,3,4,1,8,2,5,9}
                                             });
             Assert.False(sudoku.IsValid());
         }
