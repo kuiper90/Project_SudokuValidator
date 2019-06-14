@@ -1,4 +1,4 @@
-using static Project_SudokuValidator.SudokuUtils;
+using static Project_SudokuValidator.SudokuValidator;
 using Xunit;
 
 namespace UnitTest_SudokuValidator

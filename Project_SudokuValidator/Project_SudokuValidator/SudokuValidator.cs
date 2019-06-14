@@ -2,11 +2,12 @@
 
 namespace Project_SudokuValidator
 {
-    public static class SudokuUtils
+    public static class SudokuValidator
     {
         private static bool Distinct(int[] row)
         {
             int[] mask = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
             for (int i = 0; i < 9; i++)
             {
                 if (row[i] < 1 || row[i] > 9)
